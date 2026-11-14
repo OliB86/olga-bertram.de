@@ -117,3 +117,9 @@ h1 em{font-style:italic;color:var(--accent)}
 @media (max-width:860px){.termin{grid-template-columns:1fr;grid-template-areas:"side" "main" "mid";row-gap:32px}.t-mid{margin-top:0}.t-card iframe{height:900px}}
 .t-links{margin-top:18px}
 .t-mid .t-btn{background:transparent;color:var(--ink)}.t-mid .t-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}.t-mid{margin-top:32px}
+.band{transition:height .25s ease,background-color .25s ease}
+.run span{font-size:15px;color:var(--ink);transition:font-size .25s ease}
+.lbl{transition:font-size .25s ease}
+@media (hover:hover){.band:hover{height:60px;background:rgba(255,255,255,.78)}.band:hover .run span{font-size:19px}.band:hover .lbl{font-size:11px}}
+.band.stop{height:60px;background:rgba(255,255,255,.78)}.band.stop .run span{font-size:19px}
+@media (prefers-reduced-motion:reduce){.band,.run span,.lbl{transition:none}}
