@@ -123,3 +123,4 @@ h1 em{font-style:italic;color:var(--accent)}
 @media (hover:hover){.band:hover{height:60px;background:rgba(255,255,255,.78)}.band:hover .run span{font-size:19px}.band:hover .lbl{font-size:11px}}
 .band.stop{height:60px;background:rgba(255,255,255,.78)}.band.stop .run span{font-size:19px}
 @media (prefers-reduced-motion:reduce){.band,.run span,.lbl{transition:none}}
+.paw{width:26px;height:26px;opacity:1;color:var(--accent);margin-left:2px}.band:hover .paw,.band.stop .paw{width:32px;height:32px}
