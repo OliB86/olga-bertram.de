@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Termin buchen – Olga Bertram</title>
+<meta name="description" content="30 Minuten per Video mit Olga Bertram – für Keynotes, Kooperationen, Lehraufträge oder ein erstes Hallo.">
+<link rel="canonical" href="https://olga-bertram.de/termin.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1d1814">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="termin">
+  <div class="t-side">
+    <a class="back" href="/">← Olga Bertram</a>
+    <img class="t-foto" src="img/oli-portrait.jpg" alt="Olga Bertram">
+    <h1>Lass uns <em>sprechen.</em></h1>
+    <p class="t-lead">30 Minuten per Video, um uns kennenzulernen – für Keynotes, Kooperationen, Lehraufträge oder einfach ein erstes Hallo.</p>
+    <ul class="t-facts"><li>30 Minuten · Google Meet</li><li>Mo, Di, Do vormittags &amp; nachmittags, Mi nachmittags</li><li>Den Link bekommst du per Mail</li></ul>
+    <div class="t-sig">Oli</div>
+  </div>
+  <div class="t-main">
+    <div class="t-card" id="karte">
+      <div class="t-load">
+        <p class="t-load-h">Freie Termine</p>
+        <p>Die Terminbuchung läuft über Google Kalender. Erst wenn du auf den Knopf klickst, wird sie geladen und es werden Daten an Google übertragen. Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</p>
+        <button type="button" id="laden">Freie Termine anzeigen</button>
+        <a class="t-link" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-HtLCZE9fA-_RqJB_MCBhWlMGnx2JpnDTL9cqTJJKUjpfqdbs-h_6QNOY8-_olv-LHsk-2R6O" target="_blank" rel="noopener">lieber direkt bei Google öffnen →</a>
+      </div>
+    </div>
+  </div>
+  <div class="t-mid">
+      <h2>Unterstützung für dein Unternehmen?</h2>
+      <p>Als externe CFO &amp; COO und im C-Level-Support arbeite ich mit Unternehmen über meine make it done GmbH – mit Team, klaren Prozessen und allem, was dazugehört. Das Erstgespräch dafür läuft dort.</p>
+      <a class="t-btn" href="https://makeitdone.de" target="_blank" rel="noopener">Zu make it done</a>
+      <a class="t-link" href="https://calendly.com/makeitdone/kennenlernen-15-min" target="_blank" rel="noopener">oder direkt ein Erstgespräch buchen →</a>
+    </div>
+</main>
+<div class="foot t-foot"><span>© 2026 Olga Bertram</span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+<script>
+document.getElementById('laden').addEventListener('click',function(){
+  var k=document.getElementById('karte');
+  k.innerHTML='<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-HtLCZE9fA-_RqJB_MCBhWlMGnx2JpnDTL9cqTJJKUjpfqdbs-h_6QNOY8-_olv-LHsk-2R6O?gv=true" title="Termin bei Olga Bertram buchen" loading="lazy"></iframe>';
+  k.classList.add('geladen');
+});
+</script>
+</body>
+</html>
