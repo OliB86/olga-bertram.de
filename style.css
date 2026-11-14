@@ -1,0 +1,95 @@
+@font-face{font-family:"Fraunces";src:url(fonts/fraunces-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(fonts/fraunces-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Open Sans";src:url(fonts/open-sans-latin-300-normal.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Open Sans";src:url(fonts/open-sans-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Open Sans";src:url(fonts/open-sans-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Nothing You Could Do";src:url(fonts/nothing-you-could-do-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{--ink:#1d1814;--soft:#5b5048;--cream:#f4eee7;--accent:#8a6a4a}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:"Open Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+/* Startseite: Foto als Vollbild, Text links auf der hellen Wand */
+.stage{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column}
+.stage picture{position:absolute;inset:0;z-index:0}
+.stage img{width:100%;height:100%;object-fit:cover;object-position:100% 20%}
+.stage::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(244,238,231,.55) 0%,rgba(244,238,231,.25) 40%,rgba(244,238,231,0) 60%)}
+.copy,.foot{position:relative;z-index:2;padding-inline:clamp(20px,6vw,88px)}
+.top{padding-top:32px;display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.top a{text-decoration:none}
+.copy{margin:auto 0;max-width:min(980px,62vw);padding-block:56px 32px}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(44px,6.4vw,88px);line-height:.98;letter-spacing:-.02em}
+h1 em{font-style:italic;color:var(--accent)}
+.lead{margin-top:28px;font-size:clamp(17px,1.4vw,19px);line-height:1.55;color:var(--soft);max-width:30em}
+.facts{margin-top:28px;list-style:none;padding:0;font-size:15px;line-height:1.5;color:var(--soft);border-left:1px solid rgba(29,24,20,.25);padding-left:16px}
+.facts li+li{margin-top:4px}
+.cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+.cta a{font-size:15px;font-weight:500;text-decoration:none;padding:13px 22px;border-radius:999px;border:1px solid var(--ink)}
+.cta a.main{background:var(--ink);color:var(--cream)}
+.cta a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.foot{padding-bottom:28px;padding-top:18px;font-size:12.5px;color:var(--soft);display:flex;gap:18px;flex-wrap:wrap}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--accent)}
+
+@media (max-width:820px){
+  .stage picture{height:68svh;bottom:auto}
+  .stage img{object-position:50% 0}
+  .stage::after{background:linear-gradient(180deg,rgba(244,238,231,0) 0%,rgba(244,238,231,0) 38svh,rgba(244,238,231,1) 66svh)}
+  .copy{margin:52svh 0 0;padding-block:0 40px}
+  .top{color:var(--ink)}
+}
+
+/* Rechtstexte */
+.legal{max-width:680px;margin:0 auto;padding:40px 20px 80px;line-height:1.6}
+.legal .back{font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-weight:500}
+.legal h1{font-size:clamp(40px,6vw,56px);margin:48px 0 28px}
+.legal h3{font-family:"Inter",sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin:28px 0 6px;font-weight:500}
+
+
+
+/* Kopf: Name im MONEYPENNY-Stil (Open Sans Light, Versalien, weit gesperrt) */
+.copy h1{font-family:"Open Sans",sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:.32em;font-size:clamp(30px,3.6vw,54px);line-height:1.1;margin-right:-.32em}
+.brand{margin-top:14px;font-weight:600;font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--soft)}
+.claim{margin-top:10px;font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:clamp(20px,1.8vw,26px);color:var(--accent)}
+
+
+/* Laufende Banner mit Etikett, halbtransparent */
+.bands{margin-top:34px;display:flex;flex-direction:column;gap:8px;margin-left:calc(-1*clamp(20px,6vw,88px));width:calc(100% + clamp(20px,6vw,88px))}
+.band{position:relative;display:flex;align-items:center;height:42px;background:rgba(255,255,255,.30);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border-top:1px solid rgba(29,24,20,.08);border-bottom:1px solid rgba(29,24,20,.08);
+  -webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+.lbl{position:relative;z-index:2;flex:none;width:calc(clamp(20px,6vw,88px) + 96px);padding-left:clamp(20px,6vw,88px);height:100%;display:flex;align-items:center;
+  font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);background:linear-gradient(90deg,var(--cream) 80%,rgba(244,238,231,0))}
+.track{display:flex;overflow:hidden;flex:1;min-width:0}
+.run{display:flex;align-items:center;flex-shrink:0;animation:lauf var(--t,60s) linear infinite}
+.b2 .run{--t:72s;animation-direction:reverse}.b3 .run{--t:80s}.b4 .run{--t:58s;animation-direction:reverse}
+.run span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-size:14px;color:rgba(29,24,20,.85)}
+.run i{font-style:normal;color:var(--accent);margin:0 16px;letter-spacing:-.06em}
+.run a{color:inherit;text-underline-offset:3px;text-decoration-color:rgba(29,24,20,.35)}
+.paw{width:15px;height:15px;fill:currentColor;opacity:.75}
+@keyframes lauf{to{transform:translateX(-100%)}}
+.bands:hover .run{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.run{animation:none}.run[aria-hidden]{display:none}.band{height:auto;padding:8px 0}.run{flex-wrap:wrap;flex-shrink:1;row-gap:4px}}
+.brand .ig{display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none}
+.brand .ig svg{width:15px;height:15px;color:var(--ink)}
+.brand .ig:hover{color:var(--ink)}
+
+/* Handschriftliche Bio */
+.bio{margin-top:30px;max-width:34em;font-family:"Nothing You Could Do",cursive;font-weight:400;font-size:clamp(20px,1.6vw,25px);line-height:1.45;color:var(--ink);transform:rotate(-1.2deg);transform-origin:left}
+.bio .sig{display:block;margin-top:6px;font-size:1.25em;color:var(--accent)}
+
+.links{margin-top:32px;display:flex;align-items:center;gap:12px}
+.links a{display:inline-flex;align-items:center;justify-content:center;height:44px;min-width:44px;border-radius:999px;border:1px solid rgba(29,24,20,.35);text-decoration:none;color:var(--ink)}
+.links svg{width:19px;height:19px}
+.links a.mid{padding:0 18px;font-weight:600;font-size:13.5px;letter-spacing:.02em}
+.links a:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.claim{color:var(--accent)}
+@media (max-width:820px){.copy{max-width:none}.bands{margin-right:calc(-1*clamp(20px,6vw,88px))}}
+.links a.main{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.links a.main:hover{background:var(--accent);border-color:var(--accent)}
+.links{flex-wrap:wrap}.links a{white-space:nowrap}
+.legal p{margin:0 0 12px}.legal .stand{margin-top:32px;font-size:13px;color:var(--soft)}
