@@ -49,8 +49,10 @@
 </main>
 <script>
 document.querySelectorAll('.band').forEach(function(b){
-  function t(){var on=b.classList.toggle('stop');b.classList.toggle('go',!on)}
-  b.addEventListener('mouseleave',function(){b.classList.remove('go')});
+  function rate(r){b.querySelectorAll('.run').forEach(function(el){el.getAnimations().forEach(function(a){a.playbackRate=r})})}
+  b.addEventListener('mouseenter',function(){rate(.3)});
+  b.addEventListener('mouseleave',function(){if(!b.classList.contains('stop'))rate(1)});
+  function t(){var on=b.classList.toggle('stop');rate(on?.3:1)}
   b.addEventListener('click',function(e){if(!e.target.closest('a'))t()});
   b.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a')){e.preventDefault();t()}});
 });
