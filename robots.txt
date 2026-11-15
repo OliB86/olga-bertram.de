@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://olga-bertram.de/sitemap.xml
