@@ -155,3 +155,14 @@ h1 em{font-style:italic;color:var(--accent)}
 .b1{animation-delay:.26s}.b2{animation-delay:.34s}.b3{animation-delay:.42s}.b4{animation-delay:.5s}
 .copy>.bio{animation-delay:.62s}.copy>.links{animation-delay:.74s}
 @media (prefers-reduced-motion:reduce){.copy>h1,.copy>.brand,.copy>.claim,.band,.copy>.bio,.copy>.links{animation:none}.links a{transition:none}.links a:hover{transform:none}}
+/* Mauszeiger: Bronze-Punkt mit Ring, Stern über Links */
+.c-on,.c-on *{cursor:none!important}
+.c-dot,.c-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:9999}
+.c-dot{width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--accent);transition:opacity .2s,width .2s,height .2s,margin .2s}
+.c-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),margin .3s cubic-bezier(.2,.8,.2,1),background .3s,opacity .2s}
+.c-ring svg{width:0;height:0;transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1)}
+.c-hot .c-ring{width:54px;height:54px;margin:-27px 0 0 -27px;background:rgba(244,238,231,.5);backdrop-filter:blur(1px)}
+.c-hot .c-ring svg{width:28px;height:28px}
+.c-hot .c-dot{opacity:0}
+.c-down .c-ring{width:28px;height:28px;margin:-14px 0 0 -14px}
+.c-out .c-dot,.c-out .c-ring{opacity:0}
