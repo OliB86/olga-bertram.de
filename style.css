@@ -124,3 +124,8 @@ h1 em{font-style:italic;color:var(--accent)}
 .band.stop{height:60px;background:rgba(255,255,255,.78)}.band.stop .run span{font-size:19px}
 @media (prefers-reduced-motion:reduce){.band,.run span,.lbl{transition:none}}
 .paw{width:26px;height:26px;opacity:1;color:var(--accent);margin-left:2px}.band:hover .paw,.band.stop .paw{width:32px;height:32px}
+.termin{grid-template-areas:"side main";grid-template-rows:auto}
+.t-mid{grid-area:auto;align-self:auto;margin-top:16px;padding:22px 28px;border-top:0;background:#fff;border-radius:22px;box-shadow:0 12px 36px rgba(29,24,20,.08);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.t-mid p{margin:0}.t-mid .t-mid-h{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 4px}
+.t-mid .t-btn{flex:none}
+@media (max-width:860px){.termin{grid-template-areas:"side" "main"}.t-mid{margin-top:16px}}
